@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfolio Website</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+    <style media="screen">
+      .raima2{
+        padding-top: 20px;
+        height: 350px;
+        width: 350px;
+      }
+      .crop1{
+        height: 350px;
+        width: 350px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header id="header">
+        <div class="overlay overlay-lg">
+          <img src="./img/shapes/square.png" class="shape square" alt="" />
+          <img src="./img/shapes/circle.png" class="shape circle" alt="" />
+          <img
+            src="./img/shapes/half-circle.png"
+            class="shape half-circle1"
+            alt=""
+          />
+          <img
+            src="./img/shapes/half-circle.png"
+            class="shape half-circle2"
+            alt=""
+          />
+          <img src="./img/shapes/x.png" class="shape xshape" alt="" />
+          <img src="./img/shapes/wave.png" class="shape wave wave1" alt="" />
+          <img src="./img/shapes/wave.png" class="shape wave wave2" alt="" />
+          <img src="./img/shapes/triangle.png" class="shape triangle" alt="" />
+          <img src="./img/shapes/letters.png" class="letters" alt="" />
+          <img src="./img/shapes/points1.png" class="points points1" alt="" />
+        </div>
+
+        <nav>
+          <div class="container">
+            <div class="logo">
+              <img src="./img/logo.png" alt="" />
+            </div>
+
+            <div class="links">
+              <ul>
+                <li>
+                  <a href="#header">Home</a>
+                </li>
+                <li>
+                  <a href="#services">Services</a>
+                </li>
+                <li>
+                  <a href="#portfolio">Portfolio</a>
+                </li>
+                <li>
+                  <a href="#about">About</a>
+                </li>
+                <li>
+                  <a href="#contact">Contact</a>
+                </li>
+                <li>
+                  <a href="mailto:raimamukherjee2910@gmail.com">Hire me</a>
+                </li>
+              </ul>
+            </div>
+
+            <div class="hamburger-menu">
+              <div class="bar"></div>
+            </div>
+          </div>
+        </nav>
+
+        <div class="header-content">
+          <div class="container grid-2">
+            <div class="column-1">
+              <h1 class="header-title">Raima Mukherjee</h1>
+              <p class="text">
+                Hello, I'm Raima Mukherjee,an aspiring software developer on a journey of innovation in the digital realm, wielding HTML, CSS, JavaScript and MERN Stack to provide functional solutions with the help of dynamic websites featuring some cool User interfaces.
+
+              </p>
+              <a href="https://drive.google.com/file/d/1FUXRlOlw49INZCmv-nRB13CKRI5H7jra/view?usp=sharing" class="btn">Download CV</a>
+              <a href="https://drive.google.com/file/d/1sRocAIdp5VI5D7Bqa6KceBxNBsFVVUqJ/view?usp=drivesdk" class="btn">Introduction Video</a>
+            </div>
+
+            <div class="column-2 image">
+              <img
+                src="./img/shapes/points2.png"
+                class="points points2"
+                alt=""
+              />
+              <img class="raima2" height="700" src="./img/raima-2.png" class="img-element z-index" alt="" />
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <section class="services section" id="services">
+        <div class="container">
+          <div class="section-header">
+            <h3 class="title" data-title="What I Provide">Services</h3>
+            <p class="text">
+              Based upon my skills, these are the 3 services which I can offer :
+            </p>
+          </div>
+
+          <div class="cards">
+            <div class="card-wrap">
+              <img
+                src="./img/shapes/points3.png"
+                class="points points1 points-sq"
+                alt=""
+              />
+              <div class="card" data-card="Front-End Dev">
+                <div class="card-content z-index">
+                  <img src="./img/design-icon.png" class="icon" alt="" />
+                  <h3 class="title-sm">Front-End Development</h3>
+                  <p class="text">
+                    Bringing websites to life with style and functionality by crafting visually engaging digital experiences using my expertise in HTML, CSS, Bootstrap and React.js.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-wrap">
+              <div class="card" data-card="Code">
+                <div class="card-content z-index">
+                  <img src="./img/code-icon.png" class="icon" alt="" />
+                  <h3 class="title-sm">Back-End Development</h3>
+                  <p class="text">
+                    Building scalable and dynamic server-side architecture, leveraging my skills in JavaScript, Node.js, Express.js and MongoDB, powering seamless web applications.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="card-wrap">
+              <img
+                src="./img/shapes/points3.png"
+                class="points points2 points-sq"
+                alt=""
+              />
+              <div class="card" data-card="App">
+                <div class="card-content z-index">
+                  <img src="./img/app-icon.png" class="icon" alt="" />
+                  <h3 class="title-sm">Building REST APIs</h3>
+                  <p class="text">
+                    Adept at constructing powerful RESTful APIs, utilizing my skills in Node.js, Express.js, MongoDB, and even extending my capabilities to Flask in Python, making them seamlessly connect and interact with various web.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="portfolio section" id="portfolio">
+        <div class="background-bg">
+          <div class="overlay overlay-sm">
+            <img
+              src="./img/shapes/half-circle.png"
+              class="shape half-circle1"
+              alt=""
+            />
+            <img
+              src="./img/shapes/half-circle.png"
+              class="shape half-circle2"
+              alt=""
+            />
+            <img src="./img/shapes/square.png" class="shape square" alt="" />
+            <img src="./img/shapes/wave.png" class="shape wave" alt="" />
+            <img src="./img/shapes/circle.png" class="shape circle" alt="" />
+            <img
+              src="./img/shapes/triangle.png"
+              class="shape triangle"
+              alt=""
+            />
+            <img src="./img/shapes/x.png" class="shape xshape" alt="" />
+          </div>
+        </div>
+
+        <div class="container">
+          <div class="section-header">
+            <h3 class="title" data-title="My works">Portfolio</h3>
+          </div>
+
+          <div class="section-body">
+            <div class="filter">
+              <button class="filter-btn active" data-filter="*">All</button>
+              <button class="filter-btn" data-filter=".ui">Front-End Dev</button>
+
+              <button class="filter-btn" data-filter=".appdev">
+                Flask
+              </button>
+              <button class="filter-btn" data-filter=".logo-design">
+                Certificates
+              </button>
+            </div>
+
+            <div class="grid">
+              <div class="grid-item logo-design">
+                <div class="gallery-image">
+                  <img src="./img/genai.png" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>Certificates</h3>
+                      <a href="https://www.cloudskillsboost.google/public_profiles/121f89c8-726d-4796-bf68-c83b225e3393/badges/6642157?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" style="color: white;"><u>Click to view the badge</u></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+
+              <div class="grid-item ui webdev">
+                <div class="gallery-image">
+                  <img src="./img/infotube.png" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>YouTube Clone with a twist</h3>
+                      <a href="https://github.com/raimamukherjee29/InfoTube" style="color: white;"><u>Github Repo link.</u></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item ui">
+                <div class="gallery-image">
+                  <img src="./img/portf.png" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>Portfolio Website</h3>
+                      <h5>Tech Stacks used - HTML, CSS, Bootstrap, JavaScript</h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item logo-design">
+                <div class="gallery-image">
+                  <img src="./img/cert1.jpeg" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>Certificates</h3>
+                      <a href="https://drive.google.com/file/d/10QEHcCE4MaiByjT5brjKWB_9g-3GwRSz/view?usp=sharing" style="color: white;"><u>Click to view the certificate</u></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item appdev">
+                <div class="gallery-image">
+                  <img src="./img/ext.png" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>Chrome Extension</h3>
+                      <a href="https://github.com/raimamukherjee29/Chrome-Extension-using-Flask" style="color: white;"><u>Github Repo link</u></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item logo-design">
+                <div class="gallery-image">
+                  <img src="./img/llmai.png" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>Certificates</h3>
+                      <a href="https://www.cloudskillsboost.google/public_profiles/121f89c8-726d-4796-bf68-c83b225e3393/badges/6642218?utm_medium=social&utm_source=linkedin&utm_campaign=ql-social-share" style="color: white;"><u>Click to view the badge.</u></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item logo-design">
+                <div class="gallery-image">
+                  <img src="./img/hackerrank2.png" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>Certificates</h3>
+                      <a href="https://www.hackerrank.com/certificates/6e039c1be563" style="color: white;"><u>Click to view the certificate.</u></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="grid-item logo-design">
+                <div class="gallery-image">
+                  <img src="./img/python.jpeg" alt="" />
+                  <div class="img-overlay">
+                    <div class="plus"></div>
+                    <div class="img-description">
+                      <h3>Certificates</h3>
+                      <a href="https://drive.google.com/file/d/1r3tslpRVISy6OABGQtWWJXf3pO01aZqG/view?usp=drivesdk" style="color: white;"><u>Click to view the certificate.</u>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="about section" id="about">
+        <div class="container">
+          <div class="section-header">
+            <h3 class="title" data-title="Who Am I?">About me</h3>
+          </div>
+
+          <div class="section-body grid-2">
+            <div class="column-1">
+              <h3 class="title-sm">Hello, I'm Raima Mukherjee</h3>
+              <p class="text">
+                As a tech enthusiast, I possess a strong command over programming
+languages like Java, JavaScript, Python, C++. I'm well-versed in frameworks like ReactJS, Bootstrap CSS, Flask and currently focusing on learning the MERN Stack. With my expertise, I can confidently navigate the realms of full-stack
+web development, creating elegant and functional solutions. Coding is
+not just a skill but a passion for me, and I constantly strive to push the
+boundaries of what's possible in the world of programming.
+              </p>
+              <div class="skills">
+                <div class="skill html">
+                  <h3 class="skill-title">HTML</h3>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-progress="90%"></div>
+                  </div>
+                </div>
+                <div class="skill css">
+                  <h3 class="skill-title">CSS</h3>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-progress="70%"></div>
+                  </div>
+                </div>
+                <div class="skill js">
+                  <h3 class="skill-title">JavaScript</h3>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-progress="70%"></div>
+                  </div>
+                </div>
+                <div class="skill py">
+                  <h3 class="skill-title">Python</h3>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-progress="95%"></div>
+                  </div>
+                </div>
+                <div class="skill java">
+                  <h3 class="skill-title">Java</h3>
+                  <div class="skill-bar">
+                    <div class="skill-progress" data-progress="95%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="column-2 image">
+              <img src="./img/shapes/points4.png" class="points" alt="" />
+              <img class="crop1" src="./img/crop1.png" height="500" class="z-index" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="records">
+        <div class="overlay overlay-sm">
+          <img src="./img/shapes/square.png" alt="" class="shape square1" />
+          <img src="./img/shapes/square.png" alt="" class="shape square2" />
+          <img src="./img/shapes/circle.png" alt="" class="shape circle" />
+          <img
+            src="./img/shapes/half-circle.png"
+            alt=""
+            class="shape half-circle"
+          />
+          <img src="./img/shapes/wave.png" alt="" class="shape wave wave1" />
+          <img src="./img/shapes/wave.png" alt="" class="shape wave wave2" />
+          <img src="./img/shapes/x.png" alt="" class="shape xshape" />
+          <img src="./img/shapes/triangle.png" alt="" class="shape triangle" />
+        </div>
+
+        <div class="container">
+          <div class="wrap">
+            <div class="record-circle">
+              <h2 class="number" data-num="3">0</h2>
+              <h4 class="sub-title">Projects</h4>
+            </div>
+          </div>
+
+          <div class="wrap">
+            <div class="record-circle active">
+              <h2 class="number" data-num="1">0</h2>
+              <h4 class="sub-title">Happy Client</h4>
+            </div>
+          </div>
+
+          <div class="wrap">
+            <div class="record-circle">
+              <h2 class="number" data-num="104">0</h2>
+              <h4 class="sub-title">Work Hours</h4>
+            </div>
+          </div>
+
+          <div class="wrap">
+            <div class="record-circle">
+              <h2 class="number" data-num="5">5</h2>
+              <h4 class="sub-title">Certificates</h4>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="blog section">
+        <div class="container">
+          <div class="section-header">
+            <h3 class="title" data-title="My Fav">Co-Curricular Achievements</h3>
+            <p class="text">
+              Following are my favourite achievements in few co-curricular activities :
+            </p>
+          </div>
+
+          <div class="blog-wrapper">
+            <div class="blog-wrap">
+              <img
+                src="./img/shapes/points3.png"
+                alt=""
+                class="points points-sq"
+              />
+
+              <div class="blog-card">
+                <div class="blog-image">
+                  <img src="./img/hultprize.jpeg" alt="" />
+                </div>
+
+                <div class="blog-content">
+                  <div class="blog-info">
+                    <h5 class="blog-date">January 2023</h5>
+                    <h5 class="blog-user"><i class="fas fa-user"></i>Raima</h5>
+                  </div>
+                  <h3 class="title-sm">Hult-Prize 2023 Campus Runner up</h3>
+                  <p class="blog-text">
+                    Worked on a start-up idea under the domain of sustainable fashion as a Business Development and Research Head of the team, bagging 2nd rank in the prestigious Hult Prize 2023 Campus Round, showcasing team-work and leadership qualities.
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="blog-wrap">
+              <div class="blog-card">
+                <div class="blog-image">
+                  <img src="./img/elysian.jpeg" alt="" />
+                </div>
+
+                <div class="blog-content">
+                  <div class="blog-info">
+                    <h5 class="blog-date">May 2021</h5>
+                    <h5 class="blog-user"><i class="fas fa-user"></i>Raima</h5>
+                  </div>
+                  <h3 class="title-sm">A published poet</h3>
+                  <p class="blog-text">
+                    Got one of my favourite poems published in this beautiful anthology called "Elysian" by Writer's Pocket.
+                  </p>
+                  
+                </div>
+              </div>
+            </div>
+
+      </section>
+
+
+
+      <section class="hireme" id="hireme">
+        <div class="container">
+          <h3 class="title">Let's talk about a project</h3>
+          <p class="text">
+            You can reach me via Email- raimamukherjee2910@gmail.com or contact me- 8144614710 for discussing about the projects which serve your purpose.
+          </p>
+          <a href="mailto:raimamukherjee2910@gmail.com" class="btn">Hire me</a>
+        </div>
+      </section>
+    </main>
+<section class="contact" id="contact">
+
+    <footer class="footer">
+      <div class="container">
+        <div class="grid-4">
+          <div class="grid-4-col footer-about">
+            <h3 class="title-sm">About</h3>
+            <p class="text">
+              An enthusiastic and passionate web developer with a strong command in HTML, CSS, JavaScript and MERN Stack.
+            </p>
+            <br>
+              <p class="text">Contact- 8144614710</p>
+          </div>
+
+          <div class="grid-4-col footer-links">
+            <h3 class="title-sm">Links</h3>
+            <ul>
+              <li>
+                <a href="#services">Services</a>
+              </li>
+              <li>
+                <a href="#portfolio">Portfolio</a>
+              </li>
+              <li>
+                <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#contact">Contact</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="grid-4-col footer-links">
+            <h3 class="title-sm">Services</h3>
+            <ul>
+              <li>
+                <a href="#">Front-End Dev</a>
+              </li>
+              <li>
+                <a href="#">Back-End Dev</a>
+              </li>
+
+              <li>
+                <a href="#">Building APIs</a>
+              </li>
+
+            </ul>
+          </div>
+
+          <div class="grid-4-col footer-newstletter">
+            <h3 class="title-sm">Subscribe</h3>
+            <p class="text">
+              If my skillset proves me worthy of contributing to your company, kindly drop your email for future communications.
+            </p>
+            <div class="footer-input-wrap">
+              <input type="email" class="footer-input" placeholder="Email" />
+              <a href="mailto: raimamukherjee2910@gmail.com" class="input-arrow">
+                <i class="fas fa-angle-right"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-footer">
+          <div class="copyright">
+            <p class="text">
+              Copyright&copy;2023 All rights reserved | Made by
+              <span>Raima Mukherjee</span>
+            </p>
+          </div>
+
+          <div class="followme-wrap">
+            <div class="followme">
+              <h3>Follow me</h3>
+              <span class="footer-line"></span>
+              <div class="social-media">
+
+                </a>
+                <a href="https://www.linkedin.com/in/raima-mukherjee-416089239">
+                  <i class="fab fa-linkedin-in"></i>
+                </a>
+              </div>
+            </div>
+
+            <div class="back-btn-wrap">
+              <a href="#" class="back-btn">
+                <i class="fas fa-chevron-up"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="./js/isotope.pkgd.min.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <script src="./js/app.js"></script>
+  </body>
+</html>
