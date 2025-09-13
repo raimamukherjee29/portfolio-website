@@ -18,6 +18,9 @@
         padding-top: 20px;
         height: 350px;
         width: 350px;
+        transition: transform 0.3s ease;
+        cursor: pointer;
+        border-radius: 50%;
       }
       .crop1{
         height: 350px;
@@ -70,6 +73,9 @@
                   <a href="#about">About</a>
                 </li>
                 <li>
+                  <a href="#experience">Experience</a>
+                </li>
+                <li>
                   <a href="#contact">Contact</a>
                 </li>
                 <li>
@@ -89,11 +95,10 @@
             <div class="column-1">
               <h1 class="header-title">Raima Mukherjee</h1>
               <p class="text">
-                Hello, I'm Raima Mukherjee,an aspiring software developer on a journey of innovation in the digital realm, wielding HTML, CSS, JavaScript and MERN Stack to provide functional solutions with the help of dynamic websites featuring some cool User interfaces.
+                Hello, I'm Raima Mukherjee, a Software Developer on a journey of innovation in the digital realm, wielding HTML, CSS, JavaScript and MERN Stack to provide functional solutions with the help of dynamic websites featuring some cool User interfaces.
 
               </p>
-              <a href="https://drive.google.com/file/d/1FUXRlOlw49INZCmv-nRB13CKRI5H7jra/view?usp=sharing" class="btn">Download CV</a>
-              <a href="https://drive.google.com/file/d/1sRocAIdp5VI5D7Bqa6KceBxNBsFVVUqJ/view?usp=drivesdk" class="btn">Introduction Video</a>
+              <a href="https://drive.google.com/file/d/1FUXRlOlw49INZCmv-nRB13CKRI5H7jra/view?usp=sharing" class="btn">View Resume</a>
             </div>
 
             <div class="column-2 image">
@@ -422,73 +427,128 @@ boundaries of what's possible in the world of programming.
         </div>
       </section>
 
-      <section class="blog section">
+      <section class="experience section" id="experience">
         <div class="container">
           <div class="section-header">
-            <h3 class="title" data-title="My Fav">Co-Curricular Achievements</h3>
+            <h3 class="title" data-title="My Journey">Work Experience</h3>
             <p class="text">
-              Following are my favourite achievements in few co-curricular activities :
+              My professional journey in software development and React.js expertise
             </p>
           </div>
 
-          <div class="blog-wrapper">
-            <div class="blog-wrap">
-              <img
-                src="./img/shapes/points3.png"
-                alt=""
-                class="points points-sq"
-              />
-
-              <div class="blog-card">
-                <div class="blog-image">
-                  <img src="./img/hultprize.jpeg" alt="" />
-                </div>
-
-                <div class="blog-content">
-                  <div class="blog-info">
-                    <h5 class="blog-date">January 2023</h5>
-                    <h5 class="blog-user"><i class="fas fa-user"></i>Raima</h5>
-                  </div>
-                  <h3 class="title-sm">Hult-Prize 2023 Campus Runner up</h3>
-                  <p class="blog-text">
-                    Worked on a start-up idea under the domain of sustainable fashion as a Business Development and Research Head of the team, bagging 2nd rank in the prestigious Hult Prize 2023 Campus Round, showcasing team-work and leadership qualities.
-                  </p>
-                  
+          <div class="timeline-container">
+            <div class="timeline-line" id="timeline-line"></div>
+            
+            <div class="timeline-item" data-aos="fade-up">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">Jan 2024 - Apr 2024</div>
+                <h3 class="timeline-title">Web Development Intern</h3>
+                <h4 class="timeline-company">RnPSoft Pvt. Ltd.</h4>
+                <p class="timeline-description">
+                  Worked as a React.js Developer at RnPSoft Pvt. Ltd., where I honed my skills in building dynamic web applications. 
+                  I was responsible for creating reusable React components, managing application state with Redux, 
+                  implementing responsive designs, and optimizing application performance. This experience strengthened my 
+                  foundation in modern front-end development practices and component-based architecture.
+                </p>
+                <div class="timeline-skills">
+                  <span class="skill-tag">React.js</span>
+                  <span class="skill-tag">Redux</span>
+                  <span class="skill-tag">Component Architecture</span>
+                  <span class="skill-tag">Performance Optimization</span>
                 </div>
               </div>
             </div>
 
-            <div class="blog-wrap">
-              <div class="blog-card">
-                <div class="blog-image">
-                  <img src="./img/elysian.jpeg" alt="" />
-                </div>
-
-                <div class="blog-content">
-                  <div class="blog-info">
-                    <h5 class="blog-date">May 2021</h5>
-                    <h5 class="blog-user"><i class="fas fa-user"></i>Raima</h5>
-                  </div>
-                  <h3 class="title-sm">A published poet</h3>
-                  <p class="blog-text">
-                    Got one of my favourite poems published in this beautiful anthology called "Elysian" by Writer's Pocket.
-                  </p>
-                  
+            <div class="timeline-item" data-aos="fade-up" data-aos-delay="200">
+              <div class="timeline-dot"></div>
+              <div class="timeline-content">
+                <div class="timeline-date">August 2024 - Present</div>
+                <h3 class="timeline-title">Software Development Engineer - 1</h3>
+                <h4 class="timeline-company">Amagi Media Labs</h4>
+                <p class="timeline-description">
+                  Currently working as a Software Developer at Amagi Media Labs, where I'm developing cutting-edge media technology solutions. 
+                  My role involves building responsive and interactive user interfaces using React.js, implementing modern JavaScript ES6+ features, 
+                  and collaborating with cross-functional teams to deliver high-quality streaming and broadcast solutions.
+                </p>
+                <div class="timeline-skills">
+                  <span class="skill-tag">React.js</span>
+                  <span class="skill-tag">JavaScript</span>
+                  <span class="skill-tag">Media Technology</span>
+                  <span class="skill-tag">UI/UX</span>
                 </div>
               </div>
             </div>
-
+          </div>
+        </div>
       </section>
 
 
 
       <section class="hireme" id="hireme">
         <div class="container">
-          <h3 class="title">Let's talk about a project</h3>
-          <p class="text">
-            You can reach me via Email- raimamukherjee2910@gmail.com or contact me- 8144614710 for discussing about the projects which serve your purpose.
-          </p>
-          <a href="mailto:raimamukherjee2910@gmail.com" class="btn">Hire me</a>
+          <h3 class="title">Let's Connect</h3>
+
+          <div class="contact-container">
+            <div class="contact-header">
+              <p class="contact-subtitle">Ready to bring your ideas to life? Let's discuss your next project.</p>
+            </div>
+            
+            <form class="modern-contact-form" id="contact-form">
+              <div class="form-row">
+                <div class="input-group">
+                  <input type="text" id="name" name="name" required>
+                  <label for="name">Your Name</label>
+                </div>
+                <div class="input-group">
+                  <input type="email" id="email" name="email" required>
+                  <label for="email">Your Email Address</label>
+                </div>
+              </div>
+              
+                             <div class="phone-input-group">
+                 <div class="country-code-group">
+                   <select id="country-code" name="country-code" required>
+                     <option value="+1">🇺🇸 +1</option>
+                     <option value="+91" selected>🇮🇳 +91</option>
+                     <option value="+44">🇬🇧 +44</option>
+                     <option value="+33">🇫🇷 +33</option>
+                     <option value="+49">🇩🇪 +49</option>
+                     <option value="+81">🇯🇵 +81</option>
+                     <option value="+86">🇨🇳 +86</option>
+                     <option value="+61">🇦🇺 +61</option>
+                     <option value="+7">🇷🇺 +7</option>
+                     <option value="+55">🇧🇷 +55</option>
+                   </select>
+                 </div>
+                 <div class="input-group phone-number-group">
+                   <input type="tel" id="contact" name="contact" pattern="[0-9]*" inputmode="numeric" required>
+                   <label for="contact">Phone Number</label>
+                 </div>
+               </div>
+              
+              <div class="input-group">
+                <textarea id="message" name="message" rows="5" required></textarea>
+                <label for="message">Your Message</label>
+              </div>
+              
+              <button type="submit" class="submit-btn">
+                Send Message
+                <i class="fas fa-arrow-right"></i>
+              </button>
+            </form>
+            
+            <div class="contact-info">
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <span>raimamukherjee2910@gmail.com</span>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <span>+91 8144614710</span>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
     </main>
@@ -517,6 +577,9 @@ boundaries of what's possible in the world of programming.
               </li>
               <li>
                 <a href="#about">About</a>
+              </li>
+              <li>
+                <a href="#experience">Experience</a>
               </li>
               <li>
                 <a href="#contact">Contact</a>
@@ -586,6 +649,34 @@ boundaries of what's possible in the world of programming.
       </div>
     </footer>
   </section>
+
+  <!-- Chatbot -->
+  <div class="chatbot-container">
+    <div class="chatbot-icon" id="chatbot-icon">
+      <i class="fas fa-terminal"></i>
+      <div class="tooltip">Click to open terminal</div>
+    </div>
+    
+    <div class="chatbot-window" id="chatbot-window">
+      <div class="chatbot-header">
+        <div class="terminal-title">
+          <span class="terminal-dot red">
+            <button class="chatbot-close" id="chatbot-close">
+              <i class="fas fa-times"></i>
+            </button>
+          </span>
+          <span class="terminal-dot yellow"></span>
+          <span class="terminal-dot green"></span>
+          <span class="terminal-name">Raima's Interactive Terminal</span>
+        </div>
+      </div>
+      
+      <div class="chatbot-body" id="chatbot-body">
+      </div>
+      
+
+    </div>
+  </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/isotope.pkgd.min.js"></script>
