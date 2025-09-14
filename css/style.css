@@ -1072,6 +1072,49 @@ header .circle {
   top: 0;
   height: 40%;
   background: url("../img/map.png") center center / cover;
+  cursor: pointer;
+}
+
+/* Map tooltip */
+.contact {
+  position: relative;
+}
+
+.contact .map-tooltip {
+  position: absolute;
+  top: 2%;
+  left: 46%;
+  transform: translateX(-50%);
+  background: var(--main-color);
+  color: #ffffff;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  z-index: 1000;
+  pointer-events: none;
+  box-shadow: 0 4px 15px rgba(114, 46, 209, 0.4);
+  margin-bottom: 30px;
+}
+
+.contact .map-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 8px solid transparent;
+  border-top-color: var(--main-color);
+}
+
+.contact:hover .map-tooltip {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(-5px);
 }
 
 .contact:after {
@@ -1410,6 +1453,50 @@ header .circle {
   transform: translateY(-1px);
 }
 
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.submit-btn:disabled:hover {
+  transform: none;
+  box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+}
+
+/* Form Messages */
+.form-message {
+  margin-top: 1rem;
+  padding: 1rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  text-align: center;
+  animation: slideIn 0.3s ease-out;
+}
+
+.form-message.success {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border: 1px solid #059669;
+}
+
+.form-message.error {
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: white;
+  border: 1px solid #dc2626;
+}
+
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 .contact-info {
   display: flex;
   justify-content: center;
@@ -1491,12 +1578,17 @@ header .circle {
   }
   
   .phone-input-group {
-    flex-direction: column;
+    flex-direction: row;
     gap: 8px;
   }
   
   .country-code-group select {
-    width: 100%;
+    width: 100px;
+    min-width: 100px;
+  }
+  
+  .phone-number-group {
+    flex: 1;
   }
   
   .contact-info {

@@ -18,7 +18,7 @@
         padding-top: 20px;
         height: 350px;
         width: 350px;
-        transition: transform 0.3s ease;
+        transition: transform 0.3s ease, opacity 0.15s ease;
         cursor: pointer;
         border-radius: 50%;
       }
@@ -553,6 +553,7 @@ boundaries of what's possible in the world of programming.
       </section>
     </main>
 <section class="contact" id="contact">
+  <div class="map-tooltip">📍 Based in Bengaluru, India</div>
 
     <footer class="footer">
       <div class="container">
@@ -681,6 +682,10 @@ boundaries of what's possible in the world of programming.
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="./js/isotope.pkgd.min.js"></script>
     <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+    <!-- EmailJS CDN -->
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+    <!-- Configuration -->
+    <script src="./js/config.js"></script>
     <script src="./js/app.js"></script>
   </body>
 </html>

@@ -851,6 +851,11 @@ ${this.currentDirectory === 'home' ?
 
 // Initialize chatbot when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
+  // Initialize EmailJS with config
+  if (window.EMAIL_CONFIG) {
+    emailjs.init(window.EMAIL_CONFIG.EMAILJS_PUBLIC_KEY);
+  }
+  
   new PortfolioChatbot();
   initializeInteractiveImage();
   initializeContactForm();
@@ -865,7 +870,7 @@ function initializeInteractiveImage() {
   let currentRotationY = 0;
   let isAutoRotating = false;
   let isPaused = false;
-  let rotationSpeed = 1; // degrees per frame
+  let rotationSpeed = 3; // degrees per frame
   let speedDirection = 1; // 1 for speeding up, -1 for slowing down
   let currentImage = 'original'; // 'original' or 'ghibli'
   let lastCompleteRotation = 0;
@@ -883,10 +888,10 @@ function initializeInteractiveImage() {
       return;
     }
     
-    // Variable speed: oscillate between 1.5 and 4 degrees per frame
-    rotationSpeed += speedDirection * 0.04;
-    if (rotationSpeed >= 4) speedDirection = -1;
-    if (rotationSpeed <= 1.5) speedDirection = 1;
+    // Variable speed: oscillate between 3.5 and 8 degrees per frame
+    rotationSpeed += speedDirection * 0.09;
+    if (rotationSpeed >= 8) speedDirection = -1;
+    if (rotationSpeed <= 3.5) speedDirection = 1;
     
     currentRotationY += rotationSpeed;
     
@@ -901,17 +906,26 @@ function initializeInteractiveImage() {
       }, 1000);
     }
     
-    // Swap image every 180 degrees
-    const swapPoint = Math.floor(currentRotationY / 180) % 2;
-    const newImage = swapPoint === 0 ? 'original' : 'ghibli';
+    // Smooth image swapping based on rotation angle
+    const rotationCycle = currentRotationY % 360;
+    const swapProgress = Math.abs(Math.sin((rotationCycle * Math.PI) / 180));
+    
+    // Determine which image should be more visible
+    const shouldShowGhibli = rotationCycle > 90 && rotationCycle < 270;
+    const newImage = shouldShowGhibli ? 'ghibli' : 'original';
     
     if (newImage !== currentImage) {
       currentImage = newImage;
-      if (currentImage === 'ghibli') {
-        profileImage.src = './img/raima-2-ghibli.png';
-      } else {
-        profileImage.src = './img/raima-2.png';
-      }
+      // Smooth transition using opacity
+      profileImage.style.opacity = '0';
+      setTimeout(() => {
+        if (currentImage === 'ghibli') {
+          profileImage.src = './img/raima-2-ghibli.png';
+        } else {
+          profileImage.src = './img/raima-2.png';
+        }
+        profileImage.style.opacity = '1';
+      }, 150);
     }
     
     // Apply rotation
@@ -926,7 +940,7 @@ function initializeInteractiveImage() {
     autoRotateTimeout = setTimeout(() => {
       isAutoRotating = true;
       autoRotate();
-    }, 700);
+    }, 500);
   }
   
   // Function to stop auto rotation
@@ -956,19 +970,23 @@ function initializeInteractiveImage() {
     currentRotationY += deltaX * 0.5; // Sensitivity
     startX = e.clientX;
     
-    // Check if we've rotated 150 degrees from last swap
-    const rotationSinceLastSwap = Math.abs(currentRotationY - lastSwapRotation);
+    // Smooth swapping for manual drag
+    const rotationCycle = currentRotationY % 360;
+    const shouldShowGhibli = rotationCycle > 90 && rotationCycle < 270;
+    const newImage = shouldShowGhibli ? 'ghibli' : 'original';
     
-    if (rotationSinceLastSwap >= 150) {
-      // Swap image
-      currentImage = currentImage === 'original' ? 'ghibli' : 'original';
-      lastSwapRotation = currentRotationY;
-      
-      if (currentImage === 'ghibli') {
-        profileImage.src = './img/raima-2-ghibli.png';
-      } else {
-        profileImage.src = './img/raima-2.png';
-      }
+    if (newImage !== currentImage) {
+      currentImage = newImage;
+      // Smooth transition using opacity
+      profileImage.style.opacity = '0.7';
+      setTimeout(() => {
+        if (currentImage === 'ghibli') {
+          profileImage.src = './img/raima-2-ghibli.png';
+        } else {
+          profileImage.src = './img/raima-2.png';
+        }
+        profileImage.style.opacity = '1';
+      }, 100);
     }
     
     profileImage.style.transform = `perspective(1000px) rotateY(${currentRotationY}deg)`;
@@ -998,6 +1016,7 @@ function initializeInteractiveImage() {
 function initializeContactForm() {
   const contactForm = document.getElementById('contact-form');
   const phoneInput = document.getElementById('contact');
+  const submitBtn = document.querySelector('.submit-btn');
   
   if (!contactForm) return;
   
@@ -1020,44 +1039,53 @@ function initializeContactForm() {
   contactForm.addEventListener('submit', function(e) {
     e.preventDefault();
     
+    // Show loading state
+    const originalText = submitBtn.innerHTML;
+    submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+    submitBtn.disabled = true;
+    
     // Get form data
     const formData = new FormData(contactForm);
-    const name = formData.get('name');
-    const countryCode = formData.get('country-code');
-    const contact = formData.get('contact');
-    const email = formData.get('email');
-    const message = formData.get('message');
+    // Debug form data
+    const countryCode = formData.get('country-code') || '+91';
+    const phoneNumber = formData.get('contact') || '';
     
-    // Create mailto link with form data
-    const subject = `Project Inquiry from ${name}`;
-    const body = `Hi Raima,
-
-I'm interested in discussing a project with you.
-
-Name: ${name}
-Phone: ${countryCode} ${contact}
-Email: ${email}
-
-Project Details:
-${message}
-
-Looking forward to hearing from you!
-
-Best regards,
-${name}`;
+    console.log('Form data debug:', {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      countryCode: countryCode,
+      phoneNumber: phoneNumber,
+      message: formData.get('message')
+    });
     
-    const mailtoLink = `mailto:raimamukherjee2910@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const templateParams = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: phoneNumber ? `${countryCode} ${phoneNumber}` : 'Not provided',
+      message: formData.get('message'),
+      to_email: 'raimamukherjee2910@gmail.com'
+    };
     
-    // Open email client
-    window.location.href = mailtoLink;
-    
-    // Show success message
-    showFormMessage('Message prepared! Your email client should open shortly.', 'success');
-    
-    // Reset form after a delay
-    setTimeout(() => {
-      contactForm.reset();
-    }, 2000);
+    // Send email using EmailJS
+    emailjs.send(
+      window.EMAIL_CONFIG.EMAILJS_SERVICE_ID, 
+      window.EMAIL_CONFIG.EMAILJS_TEMPLATE_ID, 
+      templateParams
+    )
+      .then(function(response) {
+        console.log('Email sent successfully!', response.status, response.text);
+        showFormMessage('✅ Message sent successfully! I\'ll get back to you soon.', 'success');
+        contactForm.reset();
+      })
+      .catch(function(error) {
+        console.error('Failed to send email:', error);
+        showFormMessage('❌ Failed to send message. Please try again or contact me directly.', 'error');
+      })
+      .finally(function() {
+        // Reset button state
+        submitBtn.innerHTML = originalText;
+        submitBtn.disabled = false;
+      });
   });
 }
 
