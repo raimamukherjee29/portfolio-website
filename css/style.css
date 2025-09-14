@@ -1467,6 +1467,13 @@ header .circle {
   }
 }
 
+/* Hide terminal button on mobile and tablet devices */
+@media (max-width: 1024px) {
+  .chatbot-container {
+    display: none;
+  }
+}
+
 /* Responsive Design for Contact Form */
 @media (max-width: 768px) {
   .contact-container {
